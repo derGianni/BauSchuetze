@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/BauSchuetze/static/css/main.593536f1.css",
+    "main.js": "/BauSchuetze/static/js/main.c0a9a8bf.js",
+    "static/media/schütze-bau.mp4": "/BauSchuetze/static/media/schütze-bau.f593b3b1d82159bf9706.mp4",
+    "static/media/hintergrund.jpg": "/BauSchuetze/static/media/hintergrund.77d797125aaa3e8b518d.jpg",
+    "static/media/hintergrund-test.mp4": "/BauSchuetze/static/media/hintergrund-test.d8c469eb1713418ba16b.mp4",
+    "static/media/instagram-logo.png": "/BauSchuetze/static/media/instagram-logo.9a716d9a012ceaefc941.png",
+    "static/media/kontakt.jpg": "/BauSchuetze/static/media/kontakt.da6d3cdfc42107b26e3e.jpg",
+    "static/media/testReferenz.jpg": "/BauSchuetze/static/media/testReferenz.2ad2686545e5d035d5b0.jpg",
+    "static/media/testReferenz2.jpg": "/BauSchuetze/static/media/testReferenz2.6af2438da3cfe42fdc4b.jpg",
+    "static/media/testReferenz3.jpg": "/BauSchuetze/static/media/testReferenz3.6af2438da3cfe42fdc4b.jpg",
+    "static/media/logo-rot-weis.png": "/BauSchuetze/static/media/logo-rot-weis.effb690a7e4c711f88d5.png",
+    "static/media/email.svg": "/BauSchuetze/static/media/email.4a9c8932cc7a230f88c75c18330bb5a4.svg",
+    "index.html": "/BauSchuetze/index.html",
+    "main.593536f1.css.map": "/BauSchuetze/static/css/main.593536f1.css.map",
+    "main.c0a9a8bf.js.map": "/BauSchuetze/static/js/main.c0a9a8bf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.593536f1.css",
+    "static/js/main.c0a9a8bf.js"
+  ]
+}
