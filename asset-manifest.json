@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BauSchuetze/static/css/main.e6c4c6f4.css",
-    "main.js": "/BauSchuetze/static/js/main.42ef754b.js",
+    "main.js": "/BauSchuetze/static/js/main.6c5d04a8.js",
     "static/media/schütze-bau.mp4": "/BauSchuetze/static/media/schütze-bau.f593b3b1d82159bf9706.mp4",
     "static/media/hintergrund.jpg": "/BauSchuetze/static/media/hintergrund.77d797125aaa3e8b518d.jpg",
     "static/media/hintergrund-test.mp4": "/BauSchuetze/static/media/hintergrund-test.d8c469eb1713418ba16b.mp4",
@@ -14,10 +14,10 @@
     "static/media/email.svg": "/BauSchuetze/static/media/email.4a9c8932cc7a230f88c75c18330bb5a4.svg",
     "index.html": "/BauSchuetze/index.html",
     "main.e6c4c6f4.css.map": "/BauSchuetze/static/css/main.e6c4c6f4.css.map",
-    "main.42ef754b.js.map": "/BauSchuetze/static/js/main.42ef754b.js.map"
+    "main.6c5d04a8.js.map": "/BauSchuetze/static/js/main.6c5d04a8.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c4c6f4.css",
-    "static/js/main.42ef754b.js"
+    "static/js/main.6c5d04a8.js"
   ]
 }
