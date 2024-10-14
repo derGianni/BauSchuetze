@@ -8,18 +8,8 @@ import ScrollIntoView from "react-scroll-into-view";
 
 const ReferencesDetails = ({ reference }) => {
     const text = reference.acf.text.split('\r\n');
-    let url = [];
-    let temp = reference.acf.bild;
+    let url = reference.acf.photo_gallery.photo[0];
     let idx = 0;
-
-    while (temp !== false && temp !== undefined) {
-        url[idx] = temp;
-        idx++;
-        let varname = 'bild_' + (idx + 1);
-        temp = reference.acf[varname];
-    }
-
-
 
     return (
         <ScrollIntoView selector="#object">
@@ -78,13 +68,13 @@ const ImageSlider = ({slides, parentWidth}) => {
 
     if(slides.length === 0){
         slides[0] = {
-            url: "http://localhost/wordpress/wp-content/uploads/2024/02/image-not-found-icon.png",
+            full_image_url: "http://localhost/wordpress/wp-content/uploads/2024/02/image-not-found-icon.png",
         }
     }
 
     return(
         <div className="w-full h-full relative group">
-            <div className="w-full h-full rounded-xl bg-center bg-cover duration-500" style={{backgroundImage: `url(${slides[currentIndex].url})`}}/>
+            <div className="w-full h-full rounded-xl bg-center bg-cover duration-500" style={{backgroundImage: `url(${slides[currentIndex].full_image_url})`}}/>
             {/* Left Arrow */}
             <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30}/>

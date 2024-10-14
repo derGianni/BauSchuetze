@@ -8,7 +8,7 @@ const Reference = ({id, reference}) => {
     const title = reference.title.rendered;
     const location = reference.acf.ort;
     const jear = reference.acf.baujahr;
-    const imageURL = reference.acf.bild.url;
+    const imageURL = reference.acf.photo_gallery.photo[0][0].full_image_url;
     const link = '/referenzen/' + id;
 
     return (

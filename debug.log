@@ -3,3 +3,6 @@
 [0202/082308.115:ERROR:registration_protocol_win.cc(136)] TransactNamedPipe: The pipe has been ended. (0x6D)
 [0206/094517.871:ERROR:registration_protocol_win.cc(136)] TransactNamedPipe: The pipe has been ended. (0x6D)
 [0315/180306.586:ERROR:registration_protocol_win.cc(136)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[1011/235301.151:ERROR:crashpad_client_win.cc(810)] not connected
+[1012/000233.945:ERROR:crashpad_client_win.cc(810)] not connected
+[1012/000234.047:ERROR:crashpad_client_win.cc(810)] not connected
