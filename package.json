@@ -1,6 +1,6 @@
 {
   "name": "bau-schuetzue",
-  "homepage": ".",
+  "homepage": "http://.",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
@@ -17,7 +17,7 @@
     "react-icons": "^4.11.0",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.19.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-scroll-into-view": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
@@ -51,5 +51,9 @@
     "gh-pages": "^6.0.0",
     "tailwindcss": "^3.3.5"
   },
-  "proxy": "http://localhost/wordpress"
+  "proxy": "http://localhost/wordpress",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "tailwind.config.js",
+  "author": "",
+  "license": "ISC"
 }
