@@ -1,25 +1,25 @@
-import React, {Component, useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import kontakt from "../assets/kontakt.jpg";
-import { ImLocation2 } from "react-icons/im";
-import { BsCalendarCheckFill } from "react-icons/bs";
 import {Header} from "./index";
 import ReferencesDetails from "./ReferencesDetails";
-import { referenzen } from "../constants/referenzen"
 import Reference from "./Reference";
-import {referenz, referenz2, referenz3} from "../assets";
 import axios from 'axios';
 import {useParams} from "react-router-dom";
 
 const References = () => {
 
+    //States
     const [state, setState] = useState({
         references: [],
         isLoaded: false,
         idDetails: null,
     });
 
+    //Parameter from the URL
     const pId = useParams();
 
+
+    //Reading the References using axios
     useEffect(() => {
         if(!state.isLoaded){
         axios.get(`/wp-json/wp/v2/referenzen`)
@@ -32,6 +32,8 @@ const References = () => {
             .catch(err => console.log(err));
     }
         }, []);
+
+    //Returning the Page if everything is loaded
     if (state.isLoaded) {
         return (
             <>
@@ -40,7 +42,7 @@ const References = () => {
             </>
         );
     }
-
+    //Returns only the Header if something is not loaded
     return (
         <>
             <Header text="Referenzen" background={kontakt}/>
@@ -50,28 +52,61 @@ const References = () => {
 
 export default References;
 
+//--------------------Page Body--------------------
 const Main = ({references, pId}) => {
 
-    const myRef = useRef(null);
+    //Define variables
+    const [itemsPerRow, setItemsPerRow] = useState(1);
+    const [row, setRow] = useState([[]]);
 
+    //Scroll into View effect
+    const myRef = useRef(null);
     useEffect(() => {
         if (myRef.current) {
             myRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+
+        //Add event listener for window resize
+        window.addEventListener('resize', calcWidgetsOnRow);
     }, [myRef]);
 
+    //Calculate how many widgets on a row
+    const calcWidgetsOnRow = () => {
+        setItemsPerRow(window.innerWidth / 316);
+        fillRows();
+    }
+
+    const fillRows = () => {
+        setRow([[]]);
+        const newRow = [];
+        let index = 0;
+
+        for(let j = 0; j < (references.length / itemsPerRow); j++) {
+            const rowItem = [];
+
+            for(let i = 0; i < itemsPerRow; i++) {
+                rowItem.push(<Reference key={index} id={index} reference={references.at(index)} />)
+                index++;
+            }
+            newRow.push(rowItem);
+        }
+
+        console.log(newRow);
+        setRow(newRow);
+
+    }
+
+    //Returns all the References
     return(
         <div className="bg-gray-100 h-screen w-full">
-            <div className="flex gap-14 flex-wrap justify-center">
-                {references.map((reference, id) => (
-                    pId == id ? (
-                        <ReferencesDetails ref={myRef} reference={reference}/>
-                    ) : (
-                        <Reference key={id} id={id} reference={reference}/>
-                    )
+            <div className="flex gap-14">
 
-
+                {row.map((element, id) => (
+                        element.map((widget, id2) => (
+                            widget
+                        ))
                     ))}
+
             </div>
         </div>
     );
