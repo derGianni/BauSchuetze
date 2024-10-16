@@ -8,6 +8,9 @@ import ScrollIntoView from "react-scroll-into-view";
 
 const ReferencesDetails = ({ reference }) => {
     const text = reference.acf.text.split('\r\n');
+    const title = reference.title.rendered;
+    const location = reference.acf.ort;
+    const jear = reference.acf.baujahr;
     let url = reference.acf.photo_gallery.photo[0];
     let idx = 0;
 
@@ -22,15 +25,15 @@ const ReferencesDetails = ({ reference }) => {
                         <ImageSlider slides={url} />
                     </div>
                     <div className="ml-20 max-w-[800px]">
-                        <h1 className=" text-4xl">Einfamilienhaus</h1>
+                        <h1 className=" text-4xl">{title}</h1>
                         <div className="mt-5 flex">
                             <div className="flex bg-blue-100 rounded-xl w-fit px-2 mr-2">
                                 <ImLocation2 className="mt-1 w-4 h-4 mr-1" />
-                                <h2>Friedrichshafen</h2>
+                                <h2>{location}</h2>
                             </div>
                             <div className="flex bg-blue-100 rounded-xl w-fit px-2 mx-2">
                                 <BsCalendarCheckFill className="mt-1 w-4 h-4 mr-1" />
-                                <h2>2017</h2>
+                                <h2>{jear}</h2>
                             </div>
                         </div>
                         <div className="pt-2">

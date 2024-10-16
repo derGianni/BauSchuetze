@@ -56,7 +56,6 @@ export default References;
 const Main = ({references, pId}) => {
 
     //Define variables
-    const [itemsPerRow, setItemsPerRow] = useState(1);
     const [row, setRow] = useState([[]]);
 
     //Scroll into View effect
@@ -67,16 +66,14 @@ const Main = ({references, pId}) => {
         }
 
         //Add event listener for window resize
-        window.addEventListener('resize', calcWidgetsOnRow);
+        window.addEventListener('resize', fillRows);
+        fillRows();
     }, [myRef]);
 
-    //Calculate how many widgets on a row
-    const calcWidgetsOnRow = () => {
-        setItemsPerRow(window.innerWidth / 316);
-        fillRows();
-    }
 
     const fillRows = () => {
+        const  itemsPerRow = parseInt(window.innerWidth / 340);
+        console.log(itemsPerRow);
         setRow([[]]);
         const newRow = [];
         let index = 0;
@@ -85,29 +82,41 @@ const Main = ({references, pId}) => {
             const rowItem = [];
 
             for(let i = 0; i < itemsPerRow; i++) {
-                rowItem.push(<Reference key={index} id={index} reference={references.at(index)} />)
+                if(index >= references.length) break;
+                rowItem.push(<Reference key={index} id={index} reference={references.at(index)} />);
                 index++;
             }
             newRow.push(rowItem);
+
+            if(index > references.length) break;
+
+            if(index == pId) {
+                console.log("test");
+                const rowItem = [];
+                rowItem.push(<ReferencesDetails reference={references.at(index)} />);
+                newRow.push(rowItem);
+            }
+
         }
 
         console.log(newRow);
         setRow(newRow);
+        console.log(row);
 
     }
 
     //Returns all the References
     return(
         <div className="bg-gray-100 h-screen w-full">
-            <div className="flex gap-14">
-
-                {row.map((element, id) => (
+            {row.map((element, id) => (
+                <div className="flex gap-14 justify-center py-7">
+                    {
                         element.map((widget, id2) => (
                             widget
                         ))
-                    ))}
-
-            </div>
+                    }
+                </div>
+            ))}
         </div>
     );
 }
